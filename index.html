@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>TP | Gestion des Stocks </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Dashboard Gestion des stocks">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
+        <script type="text/javascript" src="assets/js/main.js"></script>
+    </head>
+    <body>
+        <!-- header -->
+        <header class="header_top">
+            <h1>Biz <span>Online</span></h1>
+            <div class="avatar">
+                <figure>
+                    <img src="assets/images/stevejobs-01.jpg" alt="avatar">
+                </figure>
+                <p>BizOnline admin</p>
+                <p>administrateur</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><i class="fa fa-home"></i> <a href="#">Dashboard</a></li>
+                    <li><i class="fa fa-truck"></i> <a href="#">Activité</a></li>
+                    <li><i class="fa fa-cubes"></i> <a class="active" href="#">Stocks</a></li>
+                    <li><i class="fa fa-bell-o"></i> <a href="#">Inventaires</a></li>
+                    <li><i class="fa fa-bar-chart"></i> <a href="#">Statistiques</a></li>
+                    <li><i class="fa fa-archive"></i> <a href="#">Historiques</a></li>
+                    <li><i class="fa fa-cog"></i> <a href="#">Paramétrages</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="search_product">
+                <label for="search"><i class="fa fa-search" aria-hidden="true"></i></label>
+                <input id="search" type="search" placeholder="Nom du produit">
+                <div class="disconnect">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    <span>Déconnexion</span>
+                </div>
+            </div>
+            <div class="gst_stock">
+                <h2>Gestion des Stocks</h2>
+                <a id="show_prod" href="#">Ajouter produit</a>
+            </div>
+            <!-- modal add product -->
+            <div class="modal-content">
+                    <h2>Ajouter un Produit</h2>
+                    <i class="fa fa-times fa-3x cross" aria-hidden="true"></i>
+
+                <form action="javascript:void(0);" method="post" id="add_product">
+                    <label for="product_name">Nom du produit :</label>
+                    <input id="product_name" type="text" placeholder=" Ex: toto" required>
+                    <br>
+                    <label for="product_price">Prix du Produit :</label>
+                    <input id="product_price" type="text" placeholder=" Ex: 23 €" required>
+                    <br>
+                    <label for="product_color">Couleur du Produit :</label>
+                    <input id="product_color" type="text" placeholder=" Ex: Rouge">
+                    <br>
+                    <label for="product_discription">Description du Produit :</label>
+                    <textarea id="product_discription" placeholder="Super produit" required></textarea>
+                    <br>
+                    <input id="send" class="button success" type="submit" value="Ajouter">
+                </form>
+            </div>
+
+            <!-- modal edit product -->
+            <div class="edit_products">
+                <h2>Modifier un Produit</h2>
+                <i class="fa fa-times fa-3x edit-cross" aria-hidden="true"></i>
+
+                <form action="javascript:void(0);" method="post" id="edit_product">
+                    <label for="edit_name">Nom du produit :</label>
+                    <input id="edit_name" type="text" placeholder=" Ex: oui oui" required>
+                    <br>
+                    <label for="edit_price">Prix du Produit :</label>
+                    <input id="edit_price" type="text" placeholder=" Ex: 13 €" required>
+                    <br>
+                    <label for="edit_color">Couleur du Produit :</label>
+                    <input id="edit_color" type="text" placeholder=" Ex: Vert">
+                    <br>
+                    <label for="edit_discription">Description du Produit :</label>
+                    <textarea id="edit_discription" placeholder="Super jouet" required></textarea>
+                    <br>
+                    <input id="edit" class="button modify" type="submit" value="Modifier">
+                </form>
+            </div>
+            <!-- Tableau -->
+            <div class="products">
+                <h3>List des produits</h3>
+                <p id="count"></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Référance</th>
+                            <th>Nom</th>
+                            <th>Prix</th>
+                            <th>Couleur</th>
+                            <th>Discription</th>
+                            <th>Modifier</th>
+                            <th>Supprimer</th>
+                        </tr>
+                    </thead>
+                    <tbody id="Product_list">
+                    </tbody>
+                </table>
+            </div>
+            <footer>
+                <p><strong>Copyright</strong> BizOnline &copy; 2017 - 2018</p>
+                <p><a href="#">www.BizOnline.com</a></p>
+            </footer>
+        </div>
+    </body>
+</html>
